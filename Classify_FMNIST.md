@@ -1,14 +1,11 @@
-### Classify FMNIST
+# Classify FMNIST
 - The goal of this project is to create a convolutional neural network to classify
-images in the FMNIST data set, which contains a total of 70,000 28x28 grayscale images of various clothing items
-
-- Here is a link to the documentation of the dataset: https://pytorch.org/vision/stable/generated/torchvision.datasets.FashionMNIST.html
-
+images in the [FMNIST dataset](https://pytorch.org/vision/stable/generated/torchvision.datasets.FashionMNIST.html), which contains a total of 70,000 28x28 grayscale images of various clothing items.
+- [The original colab notebook is linked here.](https://colab.research.google.com/drive/1TRw6bPWi5lAuNLyPGPBrx7v4FwyLz3th?usp=sharing)
+- My code correctly classifies the images in the test set around 90% of the time.
 - I use the pytorch library for the implementation of this project.
-
 - This is my unique solution to a project created for Mike X Cohen's "A Deep Understanding of Deep Learning Class"
-
-- Much of the code is adapted from this course
+- Much of the code is adapted from this course.
 
 
 ```python
@@ -45,7 +42,7 @@ print(device)
 
     cuda:0
 
-
+## Prepare the data
 
 ```python
 transform = T.Compose([ T.RandomHorizontalFlip(),
@@ -120,13 +117,13 @@ fig1.show()
 
 
     
-![svg](/Users/benjaminmellin/Desktop/Teststuff/Convert/Classify_FMNIST_5_0.svg)
+![svg](images/Classify_FMNIST_5_0.svg)
     
 
 
 
     
-![svg](/Users/benjaminmellin/Desktop/Teststuff/Convert/Classify_FMNIST_5_1.svg)
+![svg](images/Classify_FMNIST_5_1.svg)
     
 
 
@@ -177,7 +174,7 @@ print( y.shape)
     torch.Size([32])
 
 
-
+## Build the network
 ```python
 #create a class for the net
 
@@ -267,7 +264,7 @@ def makeTheNet(printtoggle=False):
 
 
 ```
-
+### Test the untrained network
 
 ```python
 # test the model with one batch
@@ -301,7 +298,7 @@ print(loss)
     tensor(2.2639, grad_fn=<NllLossBackward0>)
 
 
-
+## Train the model
 ```python
 # a function that trains the model
 
@@ -435,11 +432,11 @@ plt.show()
 
 
     
-![svg](/Users/benjaminmellin/Desktop/Teststuff/Convert/Classify_FMNIST_14_0.svg)
+![svg](images/Classify_FMNIST_14_0.svg)
     
 
 
-
+## Test the model
 ```python
 #Push data from test set through net
 
@@ -501,6 +498,6 @@ plt.show()
 
 
     
-![svg](/Users/benjaminmellin/Desktop/Teststuff/Convert/Classify_FMNIST_16_0.svg)
+![svg](images/Classify_FMNIST_16_0.svg)
     
 
